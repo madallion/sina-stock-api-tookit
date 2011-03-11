@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+		"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Test use sina stock api tookit</title>
+	<!-- required: dojo.js -->
+	<script type="text/javascript" src="../../../dojoroot/dojo/dojo.js"
+		djConfig="parseOnLoad: true, isDebug: true"></script>
+	</script>
+	<script language="JavaScript" type="text/javascript">
+		document.write("sfasdf;");
+		dojo.require("dojo.parser");
+		dojo.registerModulePath("justin", "../../justin");
+		document.write("sfasdf;");
+		dojo.require("justin.stock.tookit");
+		document.write("sfasdf;");
+		justin.stock.getStockinfoList("sz000680")
+		document.write("sfasdf;");
+		console.log("success");
+	</script>
+</head>
+</body>
+</html>
