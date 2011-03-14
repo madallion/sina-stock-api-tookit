@@ -8,15 +8,20 @@
 		djConfig="parseOnLoad: true, isDebug: true"></script>
 	</script>
 	<script language="JavaScript" type="text/javascript">
-		document.write("sfasdf;");
-		dojo.require("dojo.parser");
 		dojo.registerModulePath("justin", "../../justin");
-		document.write("sfasdf;");
 		dojo.require("justin.stock.tookit");
-		document.write("sfasdf;");
-		justin.stock.getStockinfoList("sz000680")
-		document.write("sfasdf;");
-		console.log("success");
+		var defferred = justin.stock.getStockinfoList("sz000680")
+		defferred.addCallback(function(args){
+			if(args.length>=0){
+				for(var i =0 ;i<args.length;i++){
+					document.write("name is "+args[i].stockNum);
+					document.write(" sell price is "+	args[i].CurrentPrice);
+					document.write(" Buy price is "+args[i].BuyPriceNow);
+					document.write(" time is "+args[i].Date+" "+ args[i].Time);
+					document.write("<br>");
+				}
+			}
+		});
 	</script>
 </head>
 </body>
